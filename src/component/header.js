@@ -3,23 +3,29 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import SchoolIcon from '@material-ui/icons/School';
 import './header.css' 
+import { useHistory } from "react-router-dom";
+
+
+// import history from './history'
 const useHeaderStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    flexDirection:"row"
   },
   menuButton: {
     marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1,
+    marginRight:80
   },
 }));
 
 export default function Header() {
+  let history = useHistory();
   const headerClasses = useHeaderStyles();
 
   return (
@@ -33,6 +39,10 @@ export default function Header() {
           <Typography variant="h4" className={headerClasses.title}>
           गुरुकुल
           </Typography>
+          <Button style={{marginRight:20}} onClick={() => history.push('/listing',{data:"hello"})} color="inherit">Engineering</Button>
+          <Button style={{marginRight:20}} onClick={() => history.push('/listing',{data:"sdsdsd"})} color="inherit">Medical</Button>
+          <Button style={{marginRight:20}} onClick={() => history.push('/listing',{data:"helldsdso"})} color="inherit">Commerce</Button>
+          <Button style={{marginRight:20}} onClick={() => history.push('/listing',{data:"hell12121o"})} color="inherit">MBA</Button>
         </Toolbar>
       </AppBar>
     </div>
