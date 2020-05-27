@@ -1,10 +1,9 @@
 import React ,{Component} from 'react';
-import { withRouter } from "react-router";
 import { Switch, Route,BrowserRouter as Router,} from "react-router-dom";
 import Header from './component/header'
-import Cdp from './pages/Cdp'
-import Home from './pages/home'
-import Listing from './pages/listingPage'
+import Cdp from './pages/cdp/Cdp'
+import Home from './pages/Home/home'
+import Listing from './pages/Listing/listingPage'
 
 export default class App extends Component{
   render(){
