@@ -1,3 +1,11 @@
 .header{
 color: aliceblue;
 }
+
+.linkStyle{
+    text-decoration: none;
+    font-size:medium;
+    font-weight: 420;
+    color: white;
+    margin-right: 40px;
+}

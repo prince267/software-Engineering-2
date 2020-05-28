@@ -6,21 +6,27 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import SchoolIcon from '@material-ui/icons/School';
-import './header.css' 
+import './header.css'
 import { useHistory } from "react-router-dom";
-
+import Listing from '../pages/Listing/listingPage'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 // import history from './history'
 const useHeaderStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    flexDirection:"row"
+    flexDirection: "row"
   },
   menuButton: {
     marginRight: theme.spacing(2),
   },
   title: {
-    marginRight:80
+    marginRight: 80
   },
 }));
 
@@ -29,22 +35,36 @@ export default function Header() {
   const headerClasses = useHeaderStyles();
 
   return (
-    <div className={headerClasses.root}>
-      <AppBar style={{ background: '#2E3B55' }}
-       position="static">
-        <Toolbar >
-          <IconButton edge="start" className={headerClasses.menuButton} color="inherit" aria-label="menu">
-            <SchoolIcon style={{ fontSize: 30 }} />
-          </IconButton>
-          <Typography variant="h4" className={headerClasses.title}>
-          गुरुकुल
+    <div>
+      <div className={headerClasses.root}>
+        <AppBar style={{ background: '#2E3B55' }}
+          position="static">
+          <Toolbar >
+            <IconButton edge="start" className={headerClasses.menuButton} color="inherit" aria-label="menu"
+              onClick={() => history.push('/')}
+            >
+              <SchoolIcon style={{ fontSize: 30 }} />
+            </IconButton>
+            <Typography variant="h4" className={headerClasses.title}>
+              गुरुकुल
           </Typography>
-          <Button style={{marginRight:20}} onClick={() => history.push('/listing',{data:"hello"})} color="inherit">Engineering</Button>
-          <Button style={{marginRight:20}} onClick={() => history.push('/listing',{data:"sdsdsd"})} color="inherit">Medical</Button>
-          <Button style={{marginRight:20}} onClick={() => history.push('/listing',{data:"helldsdso"})} color="inherit">Commerce</Button>
-          <Button style={{marginRight:20}} onClick={() => history.push('/listing',{data:"hell12121o"})} color="inherit">MBA</Button>
-        </Toolbar>
-      </AppBar>
+            {/* <Link className='linkStyle' to="/listing">ENGINEERING</Link>
+          <Link className='linkStyle' to="/listing">MEDICAL</Link>
+          <Link className='linkStyle' to="/listing">COMMERCE</Link>
+          <Link className='linkStyle' to="/listing">MBA</Link> */}
+            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "engineering" })} color="inherit">Engineering</Button>
+            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "medical" })} color="inherit">Medical</Button>
+            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "commerce" })} color="inherit">Commerce</Button>
+            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "mba" })} color="inherit">MBA</Button>
+          </Toolbar>
+        </AppBar>
+      </div>
+      {/* <Switch>
+    <Route path="/listing">
+            <Listing />
+          </Route>
+    
+    </Switch> */}
     </div>
   );
 }

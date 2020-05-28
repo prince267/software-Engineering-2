@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { useLocation } from "react-router-dom";
-export default class Listing extends Component {
-    render(){
-        return(
-            <div>
+export default function Listing(props) {
+    var a = props.location.state.data
+    console.log(a)
+    return (
+        <div>
 
-                <p>Listing page working</p>
-            </div>
-        )
-    }
+            <p>{a} Page</p>
+        </div>
+    )
+
 }
