@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   user: "test",
   password: "p",
-  database: "ACL",
+  database: "gurukul",
 });
 
 connection.connect((err) => {
