@@ -5,30 +5,30 @@ const connection = require("../db_connection");
 router.get("/", (req, res) => {
   if (
     Object.keys(req.query)[0] != "id" &&
-    Object.keys(req.query)[0] != "name"
+    Object.keys(req.query)[0] != "Department"
   ) {
     res.status(400).send({ error: "bad request" });
   }
 
   const id = req.query.id;
-  const name = req.query.name;
-
-  if (id === undefined && name === undefined) {
+  const Department = req.query.Department;
+  console.log("Department", Department)
+  if (id === undefined && Department === undefined) {
     res.status(400);
-    res.json({ error: "pass the parameter either id or name" });
+    res.json({ error: "pass the parameter either id or Department" });
     res.send();
   }
 
-  if (name === undefined) {
+  if (Department === undefined) {
     connection.query(
-      "SELECT * FROM users WHERE user_id =" + id,
+      "SELECT * FROM CollegeDetail WHERE Id =" + id,
       (err, result, fields) => {
         if (err) {
           res.status(400).send({ error: "bad request" });
         } else {
           console.log(">>> get call...");
           if (result[0] === undefined) {
-            res.json({ response: `user of id : ${id} is not present` });
+            res.json({ response: `College of id : ${id} is not present` });
           } else {
             res.json(result);
           }
@@ -38,17 +38,20 @@ router.get("/", (req, res) => {
   }
 
   if (id === undefined) {
+    console.log("enter*****")
     connection.query(
-      "SELECT * FROM users WHERE first_name =" + name,
+      `select 
+      CollegeDetail.Id,CollegeName,Logo,City,State,Fees,MedianSalary,Rating,Website  
+      from CollegeDetail, Courses, Address where CourseId=Courses.id and AddressId=Address.id and Department="${Department}";`,
       (err, result, fields) => {
         if (err) {
-          res.status(400).send({ error: "bad request" });
+          res.status(400).send({ error: err });
         } else {
           console.log(">>> get call...");
           if (result[0] === undefined) {
-            res.json({ response: `user of name : ${name} is not present` });
+            res.json({ response: `College of Department : ${Department} is not present` });
           } else {
-            res.json(result[0]);
+            res.json(result);
           }
         }
       }

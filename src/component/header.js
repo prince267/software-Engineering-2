@@ -55,7 +55,7 @@ export default function Header() {
             <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "engineering" })} color="inherit">Engineering</Button>
             <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "medical" })} color="inherit">Medical</Button>
             <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "commerce" })} color="inherit">Commerce</Button>
-            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "mba" })} color="inherit">Management</Button>
+            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "management" })} color="inherit">Management</Button>
           </Toolbar>
         </AppBar>
       </div>
