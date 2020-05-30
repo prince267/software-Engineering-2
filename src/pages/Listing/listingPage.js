@@ -44,7 +44,7 @@ const useStyles = theme => ({
     pos: {
         marginLeft: 13,
         fontSize: 13,
-        marginBottom: 12,
+        marginBottom: 18,
     },
 });
 
@@ -52,14 +52,16 @@ class Listing extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            hello: "",
-            isLoading:false,
+            Department: "",
+            Course:"",
+            City:"",
+            State:"",
             CollegeData: []
         }
     }
     async componentDidMount() {
-        this.setState({ hello: this.props.location.state.data })
-        let response = await fetch(`http://localhost:8080/user?Department=${this.props.location.state.data}`, {
+        this.setState({ Department: this.props.location.state.data })
+        let response = await fetch(`http://localhost:8080/college?Department=${this.props.location.state.data}`, {
             method: 'GET',
             header: {
                 'Access-Control-Allow-Origin': '*'
@@ -68,17 +70,17 @@ class Listing extends Component {
         });
         let data = await response.json()
         this.setState({ CollegeData: data })
-        // console.log("****** ", this.state.hello)
+        // console.log("****** ", this.state.Department)
     }
 
 
     async componentDidUpdate(prevProps, prevState) {
 
         if (this.props.location.state.data !== prevProps.location.state.data) {
-            this.setState({ hello: this.props.location.state.data })
+            this.setState({ Department: this.props.location.state.data })
             this.setState({CollegeData:[]})
             // this.setState({isLoading:true})
-            let response = await fetch(`http://localhost:8080/user?Department=${this.props.location.state.data}`, {
+            let response = await fetch(`http://localhost:8080/college?Department=${this.props.location.state.data}`, {
                 method: 'GET',
                 header: {
                     'Access-Control-Allow-Origin': '*'
@@ -130,9 +132,9 @@ class Listing extends Component {
 
         return (
             <div>
-                <p style={{ textAlign: 'center', fontSize: 30 }}>What is {this.state.hello} ?</p>
+                <p style={{ textAlign: 'center', fontSize: 30 }}>What is {this.state.Department} ?</p>
                 <p style={{ textAlign: 'left', fontSize: 18, marginLeft: 25, marginRight: 30 }}>
-                    {this.DepartmentDetailsText(this.state.hello)}
+                    {this.DepartmentDetailsText(this.state.Department)}
                 </p>
                 <br /><br />
                 <div className={classes.root}>
@@ -170,7 +172,7 @@ class Listing extends Component {
                                 style={{ backgroundColor: '#F5F5F5' }}
                                 avatar={
                                     <Avatar>
-                                        <img src={college.Logo} alt="hello" />
+                                        <img src={college.Logo} alt="Logo" />
                                     </Avatar>
                                 }
                                 title={college.CollegeName}
@@ -217,7 +219,7 @@ class Listing extends Component {
 
                             </CardContent>
                             <CardActions>
-                                <Button size="small">Learn More</Button>
+                                <Button size="small">Explore More</Button>
                             </CardActions>
                         </Card>
 

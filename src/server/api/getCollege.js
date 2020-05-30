@@ -38,7 +38,6 @@ router.get("/", (req, res) => {
   }
 
   if (id === undefined) {
-    console.log("enter*****")
     connection.query(
       `select 
       CollegeDetail.Id,CollegeName,Logo,City,State,Fees,MedianSalary,Rating,Website  
