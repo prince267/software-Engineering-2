@@ -8,13 +8,6 @@ import IconButton from '@material-ui/core/IconButton';
 import SchoolIcon from '@material-ui/icons/School';
 import './header.css'
 import { useHistory } from "react-router-dom";
-import Listing from '../pages/Listing/listingPage'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 
 // import history from './history'
 const useHeaderStyles = makeStyles((theme) => ({
@@ -52,10 +45,10 @@ export default function Header() {
           <Link className='linkStyle' to="/listing">MEDICAL</Link>
           <Link className='linkStyle' to="/listing">COMMERCE</Link>
           <Link className='linkStyle' to="/listing">MBA</Link> */}
-            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "engineering" })} color="inherit">Engineering</Button>
-            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "medical" })} color="inherit">Medical</Button>
-            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "commerce" })} color="inherit">Commerce</Button>
-            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "management" })} color="inherit">Management</Button>
+            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "Engineering" })} color="inherit">Engineering</Button>
+            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "Medical" })} color="inherit">Medical</Button>
+            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "Commerce" })} color="inherit">Commerce</Button>
+            <Button style={{ marginRight: 20 }} onClick={() => history.push('/listing', { data: "Management" })} color="inherit">Management</Button>
           </Toolbar>
         </AppBar>
       </div>

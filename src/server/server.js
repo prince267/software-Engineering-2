@@ -6,6 +6,7 @@ const routes = require("./routes");
 const app = express();
 app.use(express.json());
 app.use("/", routes);
+app.use(cors())
 
 app.get("/", (req, res) => {
   res.send("<h1>Hi There</h1?");
