@@ -1,0 +1,18 @@
+.body {
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 8%;
+    width: 400px;
+    height: 400px;
+  }
+
+  .images {
+    height:200px;
+    width:1000px;
+}
+
+.body1{
+margin-top: 30px;
+margin-left: 15%;
+width: 100%;
+}
