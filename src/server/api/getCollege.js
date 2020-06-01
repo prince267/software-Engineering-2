@@ -19,9 +19,10 @@ router.get("/", (req, res) => {
   }
 
   if (Department === undefined) {
-    if (name === "*") {
+    const regex = RegExp('^[%].*[%]$');
+    if (regex.test(name)) {
       connection.query(
-        `select distinct(CollegeName) from CollegeDetail order by CollegeName;`,
+        `select distinct(CollegeName) from CollegeDetail where CollegeName like '${name}' order by CollegeName limit 20`,
         (err, result, fields) => {
           if (err) {
             res.status(400).send({ error: err });

@@ -20,19 +20,28 @@ export default class Home extends Component {
     super(props);
     this.state = {
       Data: [],
+      value: "",
       college: "",
       inputValue: "",
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-  async componentDidMount() {
-    let data = await get("http://localhost:8080/college?name=*");
+  async componentDidMount() {}
+  handleSubmit() {
+    window.open(`/cdp?${this.state.college}`, "_blank");
+  }
+
+  async handleChange(event) {
+    this.setState({ college: event.target.value });
+    let data = await get(
+      `http://localhost:8080/college?name=%${event.target.value}%`
+    );
     this.setState({
       Data: data,
     });
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  handleSubmit() {
-    window.open(`/cdp?${this.state.college.CollegeName}`, "_blank");
+
+    // let data = await get(`http://localhost:8080/college?name=%${newValue}%`);
   }
   render() {
     var settings = {
@@ -71,9 +80,12 @@ export default class Home extends Component {
             }}
           >
             <Autocomplete
-              value={this.state.college}
+              value={this.state.value}
               onChange={(event, newValue) => {
-                this.setState({ college: newValue });
+                this.setState({
+                  value: newValue,
+                  college: newValue.CollegeName || null,
+                });
               }}
               inputValue={this.state.inputValue}
               onInputChange={(event, newInputValue) => {
@@ -86,6 +98,7 @@ export default class Home extends Component {
               renderInput={(params) => (
                 <TextField
                   {...params}
+                  onChange={this.handleChange}
                   label="Search Colleges & Schools"
                   variant="filled"
                   style={{
@@ -97,7 +110,11 @@ export default class Home extends Component {
                 />
               )}
             />
-            <button onClick={this.handleSubmit} className="but">
+            <button
+              onClick={this.handleSubmit}
+              disabled={this.state.college.length === 0}
+              className="but"
+            >
               Search
             </button>
           </div>

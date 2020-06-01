@@ -6,6 +6,8 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import Typography from "@material-ui/core/Typography";
 import LanguageIcon from "@material-ui/icons/Language";
 import "./Cdp.css";
+import NotFound from "../notFound/notFound";
+
 export default class Cdp extends Component {
   constructor(props) {
     super(props);
@@ -46,168 +48,188 @@ export default class Cdp extends Component {
         {this.state.CollegeData.CollegeName}
       </h4>
     );
-    return (
-      <div style={{ display: "flex", justifyContent: "flex-start" }}>
-        <div className="body">
-          <Slider {...settings}>
+    if (this.state.CollegeData.CollegeName === undefined) {
+      return <NotFound />;
+    } else {
+      return (
+        <div style={{ display: "flex", justifyContent: "flex-start" }}>
+          <div className="body">
+            <Slider {...settings}>
+              <div>
+                <img
+                  style={{ height: 500 }}
+                  src={this.state.CollegeData.Image1}
+                  alt="first"
+                />
+              </div>
+              <div>
+                <img
+                  style={{ height: 500 }}
+                  src={this.state.CollegeData.Image2}
+                  alt="second"
+                />
+              </div>
+              <div>
+                <img
+                  style={{ height: 500 }}
+                  src={this.state.CollegeData.Image3}
+                  alt="third"
+                />
+              </div>
+            </Slider>
+          </div>
+          <div className="body1">
             <div>
               <img
-                style={{ height: 500 }}
-                src={this.state.CollegeData.Image1}
-                alt="first"
+                style={{
+                  height: "50px",
+                  width: "50px",
+                  borderRadius: "50%",
+                  float: "left",
+                  marginRight: 15,
+                }}
+                src={this.state.CollegeData.Logo}
+                alt="Logo"
               />
             </div>
             <div>
-              <img
-                style={{ height: 500 }}
-                src={this.state.CollegeData.Image2}
-                alt="second"
-              />
+              <h2 style={{ margin: "0px" }}>
+                {this.state.CollegeData.CollegeName}
+              </h2>
             </div>
-            <div>
-              <img
-                style={{ height: 500 }}
-                src={this.state.CollegeData.Image3}
-                alt="third"
-              />
+            <div style={{ fontSize: 15, marginTop: 5, color: "#484848" }}>
+              <LocationOnIcon fontSize="small" style={{ float: "left" }} />
+              {this.state.CollegeData.Address1}, {this.state.CollegeData.City},{" "}
+              {this.state.CollegeData.State}
             </div>
-          </Slider>
-        </div>
-        <div className="body1">
-          <div>
-            <img
+            <div style={{ marginTop: 20 }}>
+              <hr />
+            </div>
+
+            <br />
+            <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
+              {bull} About :
+            </Typography>
+            <Typography
               style={{
-                height: "50px",
-                width: "50px",
-                borderRadius: "50%",
-                float: "left",
-                marginRight: 15,
+                marginLeft: 13,
+                fontSize: 14,
+                marginBottom: 18,
               }}
-              src={this.state.CollegeData.Logo}
-              alt="Logo"
-            />
-          </div>
-          <div>
-            <h2 style={{ margin: "0px" }}>
-              {this.state.CollegeData.CollegeName}
-            </h2>
-          </div>
-          <div style={{ fontSize: 15, marginTop: 5, color: "#484848" }}>
-            <LocationOnIcon fontSize="small" style={{ float: "left" }} />
-            {this.state.CollegeData.Address1}, {this.state.CollegeData.City},{" "}
-            {this.state.CollegeData.State}
-          </div>
-          <div style={{ marginTop: 20 }}>
-            <hr />
-          </div>
+              color="textSecondary"
+            >
+              {this.state.CollegeData.Description}. {clgname} college campus
+              includes libraries, lecture halls, residence halls, student
+              centers or dining halls, and park-like settings. {clgname} campus
+              is a collection of buildings and grounds that belong to a given
+              institution, either academic or non-academic.
+            </Typography>
 
-          <br />
-          <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
-            {bull} About :
-          </Typography>
-          <Typography
-            style={{
-              marginLeft: 13,
-              fontSize: 14,
-              marginBottom: 18,
-            }}
-            color="textSecondary"
-          >
-            {this.state.CollegeData.Description}. {clgname} college campus
-            includes libraries, lecture halls, residence halls, student centers
-            or dining halls, and park-like settings. {clgname} campus is a
-            collection of buildings and grounds that belong to a given
-            institution, either academic or non-academic.
-          </Typography>
-
-          <div class="grid-container">
-            <div class="grid-item">
-              <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
-                {bull} Course Offered :
-              </Typography>
-              <Typography
-                style={{
-                  marginLeft: 13,
-                  fontSize: 14,
-                  marginBottom: 18,
-                }}
-                color="textSecondary"
-              >
-                {this.state.CollegeData.CourseName}{" "}
-                <span style={{ color: "black" }}>
-                  [{this.state.CollegeData.Department}]
-                </span>
-              </Typography>
-            </div>
-            <div class="grid-item">
-              <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
-                {bull} Fees :
-              </Typography>
-              <Typography
-                style={{
-                  marginLeft: 13,
-                  fontSize: 14,
-                  marginBottom: 18,
-                }}
-                color="textSecondary"
-              >
-                {this.state.CollegeData.Fees} per Year
-              </Typography>
-            </div>
-            <div class="grid-item">
-              <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
-                {bull} Average Package :
-              </Typography>
-              <Typography
-                style={{
-                  marginLeft: 13,
-                  fontSize: 14,
-                  marginBottom: 18,
-                }}
-                color="textSecondary"
-              >
-                {this.state.CollegeData.MedianSalary} LPA
-              </Typography>
-            </div>
-            <div class="grid-item">
-              <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
-                {bull} Rating :
-              </Typography>
-              <Typography
-                style={{
-                  marginLeft: 13,
-                  fontSize: 14,
-                  marginBottom: 18,
-                  color: "blue",
-                }}
-              >
-                {this.state.CollegeData.Rating} / 5
-              </Typography>
-            </div>
-            <div class="grid-item" style={{ marginTop: 25 }}>
-              <p>
-                <PhoneIcon
-                  fontSize="small"
-                  style={{ float: "left", marginRight: 10 }}
-                />{" "}
-                {this.state.CollegeData.Phone}
-              </p>
-            </div>
-            <div class="grid-item" style={{ marginTop: 25 }}>
-              <p>
-                {" "}
-                <LanguageIcon
-                  fontSize="small"
-                  style={{ float: "left", marginRight: 10 }}
-                />{" "}
-                <a href={this.state.CollegeData.Website}>
-                  {this.state.CollegeData.Website}
-                </a>
-              </p>
+            <div class="grid-container">
+              <div class="grid-item">
+                <Typography
+                  style={{ fontSize: 16 }}
+                  variant="h7"
+                  component="h9"
+                >
+                  {bull} Course Offered :
+                </Typography>
+                <Typography
+                  style={{
+                    marginLeft: 13,
+                    fontSize: 14,
+                    marginBottom: 18,
+                  }}
+                  color="textSecondary"
+                >
+                  {this.state.CollegeData.CourseName}{" "}
+                  <span style={{ color: "black" }}>
+                    [{this.state.CollegeData.Department}]
+                  </span>
+                </Typography>
+              </div>
+              <div class="grid-item">
+                <Typography
+                  style={{ fontSize: 16 }}
+                  variant="h7"
+                  component="h9"
+                >
+                  {bull} Fees :
+                </Typography>
+                <Typography
+                  style={{
+                    marginLeft: 13,
+                    fontSize: 14,
+                    marginBottom: 18,
+                  }}
+                  color="textSecondary"
+                >
+                  {this.state.CollegeData.Fees} per Year
+                </Typography>
+              </div>
+              <div class="grid-item">
+                <Typography
+                  style={{ fontSize: 16 }}
+                  variant="h7"
+                  component="h9"
+                >
+                  {bull} Average Package :
+                </Typography>
+                <Typography
+                  style={{
+                    marginLeft: 13,
+                    fontSize: 14,
+                    marginBottom: 18,
+                  }}
+                  color="textSecondary"
+                >
+                  {this.state.CollegeData.MedianSalary} LPA
+                </Typography>
+              </div>
+              <div class="grid-item">
+                <Typography
+                  style={{ fontSize: 16 }}
+                  variant="h7"
+                  component="h9"
+                >
+                  {bull} Rating :
+                </Typography>
+                <Typography
+                  style={{
+                    marginLeft: 13,
+                    fontSize: 14,
+                    marginBottom: 18,
+                    color: "blue",
+                  }}
+                >
+                  {this.state.CollegeData.Rating} / 5
+                </Typography>
+              </div>
+              <div class="grid-item" style={{ marginTop: 25 }}>
+                <p>
+                  <PhoneIcon
+                    fontSize="small"
+                    style={{ float: "left", marginRight: 10 }}
+                  />{" "}
+                  {this.state.CollegeData.Phone}
+                </p>
+              </div>
+              <div class="grid-item" style={{ marginTop: 25 }}>
+                <p>
+                  {" "}
+                  <LanguageIcon
+                    fontSize="small"
+                    style={{ float: "left", marginRight: 10 }}
+                  />{" "}
+                  <a href={this.state.CollegeData.Website}>
+                    {this.state.CollegeData.Website}
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
