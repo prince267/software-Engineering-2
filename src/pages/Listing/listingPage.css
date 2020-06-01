@@ -1,39 +1,46 @@
-.headerText{
-    text-align: center;
-    margin-top: 20px;
-    font-size: large;
-    font-weight: 500;
+.headerText {
+  text-align: center;
+  margin-top: 20px;
+  font-size: large;
+  font-weight: 500;
 }
 
 .loader {
-    display: flex;
-    margin-top: 100px;
-    margin-left: 95%;
-    border: 6px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 6px solid #2E3B55;
-    width: 40px;
-    height: 40px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
-    animation: spin 2s linear infinite;
+  display: flex;
+  margin-top: 100px;
+  margin-left: 95%;
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #2e3b55;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
   }
-  
-  /* Safari */
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .noResult{
-    font-style: oblique;
-    font-size: larger;
-    color: darkblue;
-    display: flex;
-    margin-top: 100px;
-    margin-left: 56%;
+  100% {
+    transform: rotate(360deg);
   }
+}
+
+.noResult {
+  font-style: oblique;
+  font-size: larger;
+  color: darkblue;
+  display: flex;
+  margin-top: 100px;
+  margin-left: 56%;
+}
