@@ -3,6 +3,8 @@ import { get } from '../../api/index'
 import Slider from "react-slick";
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
+import Typography from '@material-ui/core/Typography';
+import LanguageIcon from '@material-ui/icons/Language';
 import './Cdp.css'
 export default class Cdp extends Component {
     constructor(props) {
@@ -26,6 +28,12 @@ export default class Cdp extends Component {
             slidesToShow: 1,
             slidesToScroll: 1
         };
+        const bull = <span style={{
+            display: 'inline-block',
+            margin: '0 2px',
+            transform: 'scale(0.8)',
+        }}>•</span>;
+        const clgname = <h4 style={{ color: 'black', display: 'inline' }}>{this.state.CollegeData.CollegeName}</h4>
         return (
             <div style={{ display: "flex", justifyContent: "flex-start" }}>
                 <div className="body">
@@ -53,14 +61,85 @@ export default class Cdp extends Component {
                         <LocationOnIcon fontSize='small' style={{ float: 'left' }} />
                         {this.state.CollegeData.Address1}, {this.state.CollegeData.City}, {this.state.CollegeData.State}
                     </div>
+                    <div style={{ marginTop: 20 }}>
+                        <hr />
+                    </div>
 
-                    <p>College Description : {this.state.CollegeData.Description}</p>
-                    <p><PhoneIcon fontSize='small' style={{ float: 'left' }} /> {this.state.CollegeData.Phone}</p>
-                    <p>Course Offered : {this.state.CollegeData.CourseName} [{this.state.CollegeData.Department}]</p>
-                    <p>Fees : {this.state.CollegeData.Fees} per Year</p>
-                    <p>Average Package: {this.state.CollegeData.MedianSalary} LPA</p>
-                    <p>Rating : {this.state.CollegeData.Rating}</p>
-                    <p>Website: <a href={this.state.CollegeData.Website}>{this.state.CollegeData.Website}</a></p>
+                    <br />
+                    <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
+                        {bull} About :
+        </Typography>
+                    <Typography style={{
+                        marginLeft: 13,
+                        fontSize: 14,
+                        marginBottom: 18
+                    }} color="textSecondary">
+                        {this.state.CollegeData.Description}. {clgname} college campus includes libraries, lecture halls,
+                        residence halls, student centers or dining halls, and park-like settings. {clgname} campus is a
+                        collection of buildings and grounds that belong to a given institution, either academic or non-academic.
+        </Typography>
+
+
+                    <div class="grid-container">
+                        <div class="grid-item">
+                            <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
+                                {bull} Course Offered :
+        </Typography>
+                            <Typography style={{
+                                marginLeft: 13,
+                                fontSize: 14,
+                                marginBottom: 18
+                            }} color="textSecondary">
+                                {this.state.CollegeData.CourseName} <span style={{ color: 'black' }}>[{this.state.CollegeData.Department}]</span>
+                            </Typography>
+
+                        </div>
+                        <div class="grid-item">
+                            <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
+                                {bull} Fees :
+        </Typography>
+                            <Typography style={{
+                                marginLeft: 13,
+                                fontSize: 14,
+                                marginBottom: 18
+                            }} color="textSecondary">
+                                {this.state.CollegeData.Fees} per Year
+                           </Typography>
+                        </div>
+                        <div class="grid-item">
+                            <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
+                                {bull} Average Package :
+        </Typography>
+                            <Typography style={{
+                                marginLeft: 13,
+                                fontSize: 14,
+                                marginBottom: 18
+                            }} color="textSecondary">
+                                {this.state.CollegeData.MedianSalary} LPA
+                           </Typography>
+                        </div>
+                        <div class="grid-item">
+                            <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
+                                {bull} Rating :
+        </Typography>
+                            <Typography style={{
+                                marginLeft: 13,
+                                fontSize: 14,
+                                marginBottom: 18,
+                                color: 'blue'
+                            }} >
+                                {this.state.CollegeData.Rating} / 5
+                            </Typography>
+                        </div>
+                        <div class="grid-item" style={{ marginTop: 25 }}>
+                            <p><PhoneIcon fontSize='small' style={{ float: 'left', marginRight: 10 }} /> {this.state.CollegeData.Phone}</p>
+                        </div>
+                        <div class="grid-item" style={{ marginTop: 25 }}>
+                            <p> <LanguageIcon fontSize='small' style={{ float: 'left', marginRight: 10 }} /> <a href={this.state.CollegeData.Website}>{this.state.CollegeData.Website}</a></p>
+
+                        </div>
+
+                    </div>
                 </div>
 
 
