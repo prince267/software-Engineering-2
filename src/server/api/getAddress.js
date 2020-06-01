@@ -3,7 +3,6 @@ const router = express.Router();
 const connection = require("../db_connection");
 
 router.get("/", (req, res) => {
-
   if (
     Object.keys(req.query)[0] != "type" &&
     Object.keys(req.query)[0] != "state"
@@ -27,9 +26,10 @@ router.get("/", (req, res) => {
           if (err) {
             res.status(400).send({ error: "bad request" });
           } else {
-            console.log(">>> get call...");
             if (result[0] === undefined) {
-              res.json({ response: `College of City : ${City} is not present` });
+              res.json({
+                response: `College of City : ${City} is not present`,
+              });
             } else {
               res.json(result);
             }
@@ -45,9 +45,10 @@ router.get("/", (req, res) => {
           if (err) {
             res.status(400).send({ error: err });
           } else {
-            console.log(">>> get call...");
             if (result[0] === undefined) {
-              res.json({ response: `College of State : ${State} is not present` });
+              res.json({
+                response: `College of State : ${State} is not present`,
+              });
             } else {
               res.json(result);
             }
@@ -63,7 +64,6 @@ router.get("/", (req, res) => {
         if (err) {
           res.status(400).send({ error: err });
         } else {
-          console.log(">>> get call...");
           if (result[0] === undefined) {
             res.json({ response: `City of State : ${State} is not present` });
           } else {
@@ -73,7 +73,6 @@ router.get("/", (req, res) => {
       }
     );
   }
-
 });
 
 module.exports = router;
