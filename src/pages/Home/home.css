@@ -14,16 +14,17 @@
 
   .text-block {
     position: absolute;
-    top: 50%;
+    top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 700px;
+  height: 140px;
     background-color:black;
     border-radius: 4px;
     opacity: 0.9;
     color: white;
   }
-  
+/*   
   input[type=text], select {
     background-color:white;
     color:black;
@@ -36,16 +37,17 @@
     border-radius: 4px;
     box-sizing: border-box;
     opacity: 1;
-  }
+  } */
 
   .but{
-      width: 100px;
     background-color:orange;
     color:white;
     font-size: large;
     font-weight: 700;
     padding: 17px;
-    display: inline-block;
+    height: 55px;
+    width: 150px;
+    margin-left: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;

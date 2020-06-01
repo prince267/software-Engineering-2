@@ -19,24 +19,40 @@ router.get("/", (req, res) => {
   }
 
   if (Department === undefined) {
-    connection.query(
-      `select CollegeName,Logo,Image1,Image2,Image3,City,State,Address1,Fees,MedianSalary,Rating,Website,Description,Phone,CourseName,Department from CollegeDetail,Courses,Address where CourseId=Courses.id and AddressId=Address.id and CollegeName="${name}";`,
-      (err, result, fields) => {
-        if (err) {
-          res.status(400).send({ error: err });
-        } else {
-          console.log(">>> get call...");
-          if (result[0] === undefined) {
-            res.json({ response: `College of name : ${name} is not present` });
+    if (name === "*") {
+      connection.query(
+        `select distinct(CollegeName) from CollegeDetail order by CollegeName;`,
+        (err, result, fields) => {
+          if (err) {
+            res.status(400).send({ error: err });
           } else {
-            res.json(result[0]);
+            console.log(">>> get call...");
+            res.json(result);
+
           }
         }
-      }
-    );
+      );
+    }
+    else {
+      connection.query(
+        `select CollegeName,Logo,Image1,Image2,Image3,City,State,Address1,Fees,MedianSalary,Rating,Website,Description,Phone,CourseName,Department from CollegeDetail,Courses,Address where CourseId=Courses.id and AddressId=Address.id and CollegeName="${name}";`,
+        (err, result, fields) => {
+          if (err) {
+            res.status(400).send({ error: err });
+          } else {
+            console.log(">>> get call...");
+            if (result[0] === undefined) {
+              res.json({ response: `College of name : ${name} is not present` });
+            } else {
+              res.json(result[0]);
+            }
+          }
+        }
+      );
+    }
   }
 
-  if (name === undefined) {
+  else if (name === undefined) {
     connection.query(
       `select 
       CollegeDetail.Id,CollegeName,Logo,City,State,Fees,MedianSalary,Rating,Website  
@@ -54,6 +70,9 @@ router.get("/", (req, res) => {
         }
       }
     );
+  }
+  else {
+    res.json({ response: `College of Department : ${Department} is not present` });
   }
 });
 
