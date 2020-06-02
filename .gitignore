@@ -4,7 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-/src/server/generator
+/src/server/generator/generate.js
+/src/server/generator/city.js
 # testing
 /coverage
 

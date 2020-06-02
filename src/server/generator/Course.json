@@ -1,0 +1,16 @@
+{
+  "courses": [
+    { "id": 1, "CourseName": "BTech", "Department": "Engineering" },
+    { "id": 2, "CourseName": "MCA", "Department": "Engineering" },
+    { "id": 3, "CourseName": "MTech", "Department": "Engineering" },
+    { "id": 4, "CourseName": "MBBS", "Department": "Medical" },
+    { "id": 5, "CourseName": "BSc in Nursing", "Department": "Medical" },
+    { "id": 6, "CourseName": "BDS", "Department": "Medical" },
+    { "id": 7, "CourseName": "BPharm", "Department": "Medical" },
+    { "id": 8, "CourseName": "B.Com", "Department": "Commerce" },
+    { "id": 9, "CourseName": "MCom", "Department": "Commerce" },
+    { "id": 10, "CourseName": "BBA", "Department": "Management" },
+    { "id": 11, "CourseName": "MBA", "Department": "Management" },
+    { "id": 12, "CourseName": "PGDM", "Department": "Management" }
+  ]
+}

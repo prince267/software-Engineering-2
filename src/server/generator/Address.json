@@ -1,0 +1,316 @@
+{
+    "Address": [
+        {
+            "id": 1,
+            "City": "Mumbai",
+            "State": "Maharashtra",
+            "Address1": "6551 Janice Orchard"
+        },
+        {
+            "id": 2,
+            "City": "Delhi",
+            "State": "Delhi",
+            "Address1": "9661 Braeden Coves"
+        },
+        {
+            "id": 3,
+            "City": "Bengaluru",
+            "State": "Karnataka",
+            "Address1": "125 Tamia Corners"
+        },
+        {
+            "id": 4,
+            "City": "Ahmedabad",
+            "State": "Gujarat",
+            "Address1": "208 Pearlie Forest"
+        },
+        {
+            "id": 5,
+            "City": "Hyderabad",
+            "State": "Telangana",
+            "Address1": "507 Casper Bypass"
+        },
+        {
+            "id": 6,
+            "City": "Chennai",
+            "State": "Tamil Nadu",
+            "Address1": "7308 Jones Bridge"
+        },
+        {
+            "id": 7,
+            "City": "Kolkata",
+            "State": "West Bengal",
+            "Address1": "80378 Ervin Keys"
+        },
+        {
+            "id": 8,
+            "City": "Pune",
+            "State": "Maharashtra",
+            "Address1": "06503 Monty Mission"
+        },
+        {
+            "id": 9,
+            "City": "Jaipur",
+            "State": "Rajasthan",
+            "Address1": "094 Rylee Crescent"
+        },
+        {
+            "id": 10,
+            "City": "Surat",
+            "State": "Gujarat",
+            "Address1": "452 O'Hara Avenue"
+        },
+        {
+            "id": 11,
+            "City": "Lucknow",
+            "State": "Uttar Pradesh",
+            "Address1": "68862 Stehr Unions"
+        },
+        {
+            "id": 12,
+            "City": "Kanpur",
+            "State": "Uttar Pradesh",
+            "Address1": "699 Layla Cliff"
+        },
+        {
+            "id": 13,
+            "City": "Nagpur",
+            "State": "Maharashtra",
+            "Address1": "114 Terry Mount"
+        },
+        {
+            "id": 14,
+            "City": "Patna",
+            "State": "Bihar",
+            "Address1": "920 Ziemann Green"
+        },
+        {
+            "id": 15,
+            "City": "Indore",
+            "State": "Madhya Pradesh",
+            "Address1": "6658 Hermann Knolls"
+        },
+        {
+            "id": 16,
+            "City": "Thane",
+            "State": "Maharashtra",
+            "Address1": "1963 Maya Mountains"
+        },
+        {
+            "id": 17,
+            "City": "Bhopal",
+            "State": "Madhya Pradesh",
+            "Address1": "387 Rosetta Points"
+        },
+        {
+            "id": 18,
+            "City": "Visakhapatnam",
+            "State": "Andhra Pradesh",
+            "Address1": "501 Farrell Falls"
+        },
+        {
+            "id": 19,
+            "City": "Vadodara",
+            "State": "Gujarat",
+            "Address1": "46504 Maggio Key"
+        },
+        {
+            "id": 20,
+            "City": "Firozabad",
+            "State": "Uttar Pradesh",
+            "Address1": "7753 Cali Parkways"
+        },
+        {
+            "id": 21,
+            "City": "Ludhiana",
+            "State": "Punjab",
+            "Address1": "9475 Ella Squares"
+        },
+        {
+            "id": 22,
+            "City": "Rajkot",
+            "State": "Gujarat",
+            "Address1": "1456 Elnora Wall"
+        },
+        {
+            "id": 23,
+            "City": "Agra",
+            "State": "Uttar Pradesh",
+            "Address1": "969 Everette Junctions"
+        },
+        {
+            "id": 24,
+            "City": "Siliguri",
+            "State": "West Bengal",
+            "Address1": "513 Renner Island"
+        },
+        {
+            "id": 25,
+            "City": "Nashik",
+            "State": "Maharashtra",
+            "Address1": "378 Emerson Islands"
+        },
+        {
+            "id": 26,
+            "City": "Faridabad",
+            "State": "Haryana",
+            "Address1": "334 Barrows Forks"
+        },
+        {
+            "id": 27,
+            "City": "Patiala",
+            "State": "Punjab",
+            "Address1": "70280 Adams Cove"
+        },
+        {
+            "id": 28,
+            "City": "Meerut",
+            "State": "Uttar Pradesh",
+            "Address1": "963 Willy Point"
+        },
+        {
+            "id": 29,
+            "City": "Kalyan-Dombivali",
+            "State": "Maharashtra",
+            "Address1": "3941 Gibson Parkways"
+        },
+        {
+            "id": 30,
+            "City": "Vasai-Virar",
+            "State": "Maharashtra",
+            "Address1": "068 Deondre Forks"
+        },
+        {
+            "id": 31,
+            "City": "Varanasi",
+            "State": "Uttar Pradesh",
+            "Address1": "39589 Giovanni Wells"
+        },
+        {
+            "id": 32,
+            "City": "Srinagar",
+            "State": "Jammu and Kashmir",
+            "Address1": "5098 Kassulke Loaf"
+        },
+        {
+            "id": 33,
+            "City": "Dhanbad",
+            "State": "Jharkhand",
+            "Address1": "0687 Thurman Track"
+        },
+        {
+            "id": 34,
+            "City": "Jodhpur",
+            "State": "Rajasthan",
+            "Address1": "778 Larissa Union"
+        },
+        {
+            "id": 35,
+            "City": "Amritsar",
+            "State": "Punjab",
+            "Address1": "4352 Kutch Tunnel"
+        },
+        {
+            "id": 36,
+            "City": "Raipur",
+            "State": "Chhattisgarh",
+            "Address1": "8889 Lon Common"
+        },
+        {
+            "id": 37,
+            "City": "Allahabad",
+            "State": "Uttar Pradesh",
+            "Address1": "3100 Kristin Knoll"
+        },
+        {
+            "id": 38,
+            "City": "Coimbatore",
+            "State": "Tamil Nadu",
+            "Address1": "78238 Upton Street"
+        },
+        {
+            "id": 39,
+            "City": "Jabalpur",
+            "State": "Madhya Pradesh",
+            "Address1": "5303 Grayce Square"
+        },
+        {
+            "id": 40,
+            "City": "Gwalior",
+            "State": "Madhya Pradesh",
+            "Address1": "83595 Roselyn Underpass"
+        },
+        {
+            "id": 41,
+            "City": "Vijayawada",
+            "State": "Andhra Pradesh",
+            "Address1": "1980 Germaine Plains"
+        },
+        {
+            "id": 42,
+            "City": "Madurai",
+            "State": "Tamil Nadu",
+            "Address1": "8065 Zander Knoll"
+        },
+        {
+            "id": 43,
+            "City": "Guwahati",
+            "State": "Assam",
+            "Address1": "12276 Sienna Island"
+        },
+        {
+            "id": 44,
+            "City": "Chandigarh",
+            "State": "Chandigarh",
+            "Address1": "2821 Schmitt Knoll"
+        },
+        {
+            "id": 45,
+            "City": "Hubli-Dharwad",
+            "State": "Karnataka",
+            "Address1": "828 Gloria Views"
+        },
+        {
+            "id": 46,
+            "City": "Amroha",
+            "State": "Uttar Pradesh",
+            "Address1": "05229 Adele Hill"
+        },
+        {
+            "id": 47,
+            "City": "Moradabad",
+            "State": "Uttar Pradesh",
+            "Address1": "90768 Laurence Crossing"
+        },
+        {
+            "id": 48,
+            "City": "Gurgaon",
+            "State": "Haryana",
+            "Address1": "11415 Bradtke Ports"
+        },
+        {
+            "id": 49,
+            "City": "Aligarh",
+            "State": "Uttar Pradesh",
+            "Address1": "79251 Janice Harbor"
+        },
+        {
+            "id": 50,
+            "City": "Solapur",
+            "State": "Maharashtra",
+            "Address1": "78339 Witting Forge"
+        },
+        {
+            "id": 51,
+            "City": "Ranchi",
+            "State": "Jharkhand",
+            "Address1": "17845 Von Field"
+        },
+        {
+            "id": 52,
+            "City": "Jalandhar",
+            "State": "Punjab",
+            "Address1": "9427 Giles Turnpike"
+        }
+    ]
+}
