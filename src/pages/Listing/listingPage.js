@@ -77,7 +77,7 @@ class Listing extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-  
+
   async componentDidMount() {
     this.setState({ Department: this.props.location.state.data });
     let Data = await get(
@@ -119,7 +119,7 @@ class Listing extends Component {
       this.setState({ Courses: course });
     }
   }
-  
+
   DepartmentDetailsText(Department) {
     if (Department === "Engineering") {
       return <p>{DepartmentDetails.Engineering}</p>;
@@ -153,22 +153,28 @@ class Listing extends Component {
 
   CityList = () => {
     return this.state.Cities.map((city) => (
-      <MenuItem value={city.city}>{city.city}</MenuItem>
+      <MenuItem key={city.city} value={city.city}>
+        {city.city}
+      </MenuItem>
     ));
   };
 
   StateList = () => {
     return this.state.States.map((state) => (
-      <MenuItem value={state.state}>{state.state}</MenuItem>
+      <MenuItem key={state.state} value={state.state}>
+        {state.state}
+      </MenuItem>
     ));
   };
 
   CourseList = () => {
     return this.state.Courses.map((course) => (
-      <MenuItem value={course.id}>{course.CourseName}</MenuItem>
+      <MenuItem key={course.id} value={course.id}>
+        {course.CourseName}
+      </MenuItem>
     ));
   };
-  
+
   async handleChange(event) {
     this.setState({ selectedState: event.target.value });
     if (event.target.value === "") {
@@ -241,7 +247,7 @@ class Listing extends Component {
             style={{ width: 300, marginLeft: 25, marginRight: 30 }}
           >
             <CardContent>
-              <Typography variant="h6" component="h9">
+              <Typography variant="h6" component="h6">
                 Filter College
               </Typography>
               <Typography
@@ -285,7 +291,8 @@ class Listing extends Component {
                   value={this.state.selectedCourse}
                   onChange={(event) => {
                     this.setState({ selectedCourse: event.target.value });
-                  }}>
+                  }}
+                >
                   <MenuItem value={""}>--</MenuItem>
                   {this.CourseList()}
                 </Select>
@@ -305,6 +312,7 @@ class Listing extends Component {
 
             {this.state.CollegeData.map((college) => (
               <Card
+                key={college.Id}
                 className={classes.root1}
                 style={{
                   width: 450,
@@ -326,15 +334,11 @@ class Listing extends Component {
                 <CardContent>
                   <div>
                     <div style={{ display: "inline-block", marginRight: 70 }}>
-                      <Typography variant="h7" component="h9">
-                        {bull}Fees
-                      </Typography>
+                      <Typography>{bull}Fees</Typography>
                       <Typography className={classes.pos} color="textSecondary">
                         {college.Fees} per Year
                       </Typography>
-                      <Typography variant="h7" component="h9">
-                        {bull} Rating
-                      </Typography>
+                      <Typography>{bull} Rating</Typography>
                       <Typography className={classes.pos} color="textSecondary">
                         <Rating
                           name="read-only"
@@ -345,15 +349,11 @@ class Listing extends Component {
                       </Typography>
                     </div>
                     <div style={{ display: "inline-block", marginLeft: 70 }}>
-                      <Typography variant="h7" component="h9">
-                        {bull} Average Package
-                      </Typography>
+                      <Typography>{bull} Average Package</Typography>
                       <Typography className={classes.pos} color="textSecondary">
                         ₹ {college.MedianSalary} LPA
                       </Typography>
-                      <Typography variant="h7" component="h9">
-                        {bull} Website
-                      </Typography>
+                      <Typography>{bull} Website</Typography>
                       <Typography className={classes.pos} color="textSecondary">
                         <a
                           href={college.Website}

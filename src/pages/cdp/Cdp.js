@@ -21,7 +21,6 @@ export default class Cdp extends Component {
       "http://localhost:8080/college?name=" + collegeName
     );
     this.setState({ CollegeData: collegeData });
-    console.log(this.state.CollegeData);
   }
   render() {
     var settings = {
@@ -107,9 +106,7 @@ export default class Cdp extends Component {
             </div>
 
             <br />
-            <Typography style={{ fontSize: 16 }} variant="h7" component="h9">
-              {bull} About :
-            </Typography>
+            <Typography style={{ fontSize: 16 }}>{bull} About :</Typography>
             <Typography
               style={{
                 marginLeft: 13,
@@ -125,13 +122,9 @@ export default class Cdp extends Component {
               institution, either academic or non-academic.
             </Typography>
 
-            <div class="grid-container">
-              <div class="grid-item">
-                <Typography
-                  style={{ fontSize: 16 }}
-                  variant="h7"
-                  component="h9"
-                >
+            <div className="grid-container">
+              <div className="grid-item">
+                <Typography style={{ fontSize: 16 }}>
                   {bull} Course Offered :
                 </Typography>
                 <Typography
@@ -148,14 +141,8 @@ export default class Cdp extends Component {
                   </span>
                 </Typography>
               </div>
-              <div class="grid-item">
-                <Typography
-                  style={{ fontSize: 16 }}
-                  variant="h7"
-                  component="h9"
-                >
-                  {bull} Fees :
-                </Typography>
+              <div className="grid-item">
+                <Typography style={{ fontSize: 16 }}>{bull} Fees :</Typography>
                 <Typography
                   style={{
                     marginLeft: 13,
@@ -167,12 +154,8 @@ export default class Cdp extends Component {
                   {this.state.CollegeData.Fees} per Year
                 </Typography>
               </div>
-              <div class="grid-item">
-                <Typography
-                  style={{ fontSize: 16 }}
-                  variant="h7"
-                  component="h9"
-                >
+              <div className="grid-item">
+                <Typography style={{ fontSize: 16 }}>
                   {bull} Average Package :
                 </Typography>
                 <Typography
@@ -186,12 +169,8 @@ export default class Cdp extends Component {
                   {this.state.CollegeData.MedianSalary} LPA
                 </Typography>
               </div>
-              <div class="grid-item">
-                <Typography
-                  style={{ fontSize: 16 }}
-                  variant="h7"
-                  component="h9"
-                >
+              <div className="grid-item">
+                <Typography style={{ fontSize: 16 }}>
                   {bull} Rating :
                 </Typography>
                 <Typography
@@ -205,7 +184,7 @@ export default class Cdp extends Component {
                   {this.state.CollegeData.Rating} / 5
                 </Typography>
               </div>
-              <div class="grid-item" style={{ marginTop: 25 }}>
+              <div className="grid-item" style={{ marginTop: 25 }}>
                 <p>
                   <PhoneIcon
                     fontSize="small"
@@ -214,7 +193,7 @@ export default class Cdp extends Component {
                   {this.state.CollegeData.Phone}
                 </p>
               </div>
-              <div class="grid-item" style={{ marginTop: 25 }}>
+              <div className="grid-item" style={{ marginTop: 25 }}>
                 <p>
                   {" "}
                   <LanguageIcon
