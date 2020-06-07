@@ -8,6 +8,7 @@ import Listing from './pages/Listing/listingPage'
 export default class App extends Component{
   render(){
     return(
+      <div>
       <Router>
     <div>
       <Route path="/" component={Header}/>
@@ -19,6 +20,7 @@ export default class App extends Component{
     </div>
 
     </Router>
+    </div>
     )
   }
 }

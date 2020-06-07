@@ -45,36 +45,28 @@ export default function Header() {
             </Typography>
             <Button
               style={{ marginRight: 20 }}
-              onClick={() =>
-                history.push("/listing?Engineering", { data: "Engineering" })
-              }
+              onClick={() => history.push("/listing?Engineering")}
               color="inherit"
             >
               Engineering
             </Button>
             <Button
               style={{ marginRight: 20 }}
-              onClick={() =>
-                history.push("/listing?Medical", { data: "Medical" })
-              }
+              onClick={() => history.push("/listing?Medical")}
               color="inherit"
             >
               Medical
             </Button>
             <Button
               style={{ marginRight: 20 }}
-              onClick={() =>
-                history.push("/listing?Commerce", { data: "Commerce" })
-              }
+              onClick={() => history.push("/listing?Commerce")}
               color="inherit"
             >
               Commerce
             </Button>
             <Button
               style={{ marginRight: 20 }}
-              onClick={() =>
-                history.push("/listing?Management", { data: "Management" })
-              }
+              onClick={() => history.push("/listing?Management")}
               color="inherit"
             >
               Management

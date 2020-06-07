@@ -79,14 +79,14 @@ class Listing extends Component {
   }
 
   async componentDidMount() {
-    this.setState({ Department: this.props.location.state.data });
+    this.setState({ Department: this.props.location.search.replace("?", "") });
     let Data = await get(
-      `http://localhost:8080/college?Department=${this.props.location.state.data}`
+      `http://localhost:8080/college?Department=${this.props.location.search.replace("?", "")}`
     );
     this.setState({ isLoding: false });
     this.setState({ CollegeData: Data });
     let course = await get(
-      `http://localhost:8080/course?department=${this.props.location.state.data}`
+      `http://localhost:8080/course?department=${this.props.location.search.replace("?", "")}`
     );
     this.setState({ Courses: course });
     let cities = await get(`http://localhost:8080/address?type=city`);
@@ -96,9 +96,9 @@ class Listing extends Component {
   }
 
   async componentDidUpdate(prevProps, prevState) {
-    if (this.props.location.state.data !== prevProps.location.state.data) {
+    if (this.props.location.search.replace("?", "") !== prevProps.location.search.replace("?", "")) {
       this.setState({
-        Department: this.props.location.state.data,
+        Department: this.props.location.search.replace("?", ""),
         selectedCity: "",
         selectedState: "",
         selectedCourse: "",
@@ -107,14 +107,14 @@ class Listing extends Component {
         CollegeData: [],
       });
       let data = await get(
-        `http://localhost:8080/college?Department=${this.props.location.state.data}`
+        `http://localhost:8080/college?Department=${this.props.location.search.replace("?", "")}`
       );
       this.setState({ isLoding: false });
       this.setState({ CollegeData: data });
       let cities = await get(`http://localhost:8080/address?type=city`);
       this.setState({ Cities: cities });
       let course = await get(
-        `http://localhost:8080/course?department=${this.props.location.state.data}`
+        `http://localhost:8080/course?department=${this.props.location.search.replace("?", "")}`
       );
       this.setState({ Courses: course });
     }
@@ -203,7 +203,7 @@ class Listing extends Component {
         CollegeData: [],
       });
       let data = await get(
-        `http://localhost:8080/college?Department=${this.props.location.state.data}`
+        `http://localhost:8080/college?Department=${this.props.location.search.replace("?", "")}`
       );
       this.setState({ isLoding: false });
       this.setState({ CollegeData: data });
