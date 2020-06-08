@@ -82,17 +82,10 @@ export default class Home extends Component {
             <Autocomplete
               value={this.state.value}
               onChange={(event, newValue) => {
-                if (newValue === null) {
-                  this.setState({
-                    value: newValue,
-                    college: "",
-                  });
-                } else {
-                  this.setState({
-                    value: newValue,
-                    college: newValue.CollegeName,
-                  });
-                }
+                this.setState({
+                  value: newValue,
+                  college: newValue === null ? "" : newValue.CollegeName,
+                });
               }}
               inputValue={this.state.inputValue}
               onInputChange={(event, newInputValue) => {
