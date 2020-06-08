@@ -13,6 +13,7 @@ export default class Cdp extends Component {
     super(props);
     this.state = {
       CollegeData: {},
+      notFound: false,
     };
   }
   async componentDidMount() {
@@ -20,7 +21,11 @@ export default class Cdp extends Component {
     let collegeData = await get(
       "http://localhost:8080/college?name=" + collegeName
     );
-    this.setState({ CollegeData: collegeData });
+    if (collegeData.CollegeName === undefined) {
+      this.setState({ notFound: true });
+    } else {
+      this.setState({ CollegeData: collegeData });
+    }
   }
   render() {
     var settings = {
@@ -47,7 +52,7 @@ export default class Cdp extends Component {
         {this.state.CollegeData.CollegeName}
       </h4>
     );
-    if (this.state.CollegeData.CollegeName === undefined) {
+    if (this.state.notFound) {
       return <NotFound />;
     } else {
       return (
